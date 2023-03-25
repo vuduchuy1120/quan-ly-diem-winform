@@ -1,0 +1,77 @@
+Tính năng update:
+
+Thông báo khi add bị trùng ID 
+---------------------------------------------------------------------------------------------------------------
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+
+            var major = _db.Majors.Select(m => m.Description).Distinct().ToList();
+            cbMajor.DataSource = major;
+
+            string RollNumber = txtRollNumber.Text;
+            if (checkInput())
+            {
+                var query = _db.Students.FirstOrDefault(c => c.RollNumber == RollNumber);
+                if (query == null)
+                {
+                    _db.Students.Add(new Student
+                    {
+                        RollNumber = txtRollNumber.Text,
+                        Gender = rbFemale.Checked ? false : true,
+                        Dob = Convert.ToDateTime(dateTimePicker1.Text),
+                        FirstName = txtFirstName.Text,
+                        Email = txtEmail.Text,
+                        MajorId = _db.Majors.FirstOrDefault(p => p.Description == cbMajor.Text).Id,
+                        LastName = txtLastName.Text,
+                        Address = txtAddress.Text,
+                    });
+                    if (_db.SaveChanges() > 0)
+                    {
+                        MessageBox.Show("Add successfull");
+                        LoadStudent(); 
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("ID is already exist");
+                }
+            }
+        }
+------------------------------------------------------------------------------------------------------------
+Sort theo filter.
+-------------------------------------------------------------------------------------------------------------------------
+ private void button2_Click(object sender, EventArgs e)
+        {
+            var list = from s in _db.Students
+                       where s.RollNumber.Contains(txtSearchRoll.Text) && s.FirstName.Contains(txtSearchFirstName.Text)
+                       && s.LastName.Contains(txtSearchLastName.Text)
+                       orderby s.RollNumber descending
+                       select new
+                       {
+                           RollNumber = s.RollNumber,
+                           FirstName = s.FirstName,
+                           LastName = s.LastName,
+                           Email = s.Email,
+                           Address = s.Address,
+                           Gender = s.Gender,
+                           Dob = s.Dob,
+                           Major = s.Major.Description,
+                       };
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = list.ToList();
+        }
+-----------------------------------------------------------------------------------------------------------------------------
+Export excel theo data filter--
+-----------------------------------------------------------------------------------------------------------------------------
+ private void button1_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                //gọi hàm ToExcel() với tham số là dtgDSHS và filename từ SaveFileDialog
+                ToExcel(dataGridView1, saveFileDialog1.FileName);
+            }
+        }
+----------------------------------------------------------------------------------------------------------------------------
+
+Tất cả code được update trong frmStudent.cs

@@ -2168,11 +2168,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\WorkSpace\\FPT-University\\Semester05\\PRN211\\StudentManagement\\StudentManagement.csproj",
+      "projectUniqueName": "D:\\WorkSpace\\FPT-University\\Semester05\\PRN211\\PRN211\\StudentManagement\\StudentManagement.csproj",
       "projectName": "StudentManagement",
-      "projectPath": "D:\\WorkSpace\\FPT-University\\Semester05\\PRN211\\StudentManagement\\StudentManagement.csproj",
+      "projectPath": "D:\\WorkSpace\\FPT-University\\Semester05\\PRN211\\PRN211\\StudentManagement\\StudentManagement.csproj",
       "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-      "outputPath": "D:\\WorkSpace\\FPT-University\\Semester05\\PRN211\\StudentManagement\\obj\\",
+      "outputPath": "D:\\WorkSpace\\FPT-University\\Semester05\\PRN211\\PRN211\\StudentManagement\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",

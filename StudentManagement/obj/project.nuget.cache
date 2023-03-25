@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xtndyM2vrvoHbGQ3+idGtZNxIxhQCaJek15zHBy1ivHI2zAn0FCGrBsp7nU0qEcwxYX0nCw9ftazHnkjJNkh7g==",
+  "dgSpecHash": "kIOOqAG4kwOJbww7K/Kxy9XOwgZe7njLzDBcbq2n9A1dZxGkrEIehSquZQJ5L6sEH+5WZsOU1Efq5xg589wybQ==",
   "success": true,
-  "projectFilePath": "D:\\WorkSpace\\FPT-University\\Semester05\\PRN211\\StudentManagement\\StudentManagement.csproj",
+  "projectFilePath": "D:\\WorkSpace\\FPT-University\\Semester05\\PRN211\\PRN211\\StudentManagement\\StudentManagement.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ASUS\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
